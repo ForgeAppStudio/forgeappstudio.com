@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Leanto | Forge App Studio</title>
+<meta name="description" content="Leanto is a calm iPhone app for autistic teens and adults, in development at Forge App Studio.">
+<meta property="og:title" content="Leanto | Forge App Studio">
+<meta property="og:description" content="Leanto is a calm iPhone app for autistic teens and adults, in development at Forge App Studio.">
+<meta property="og:image" content="https://forgeappstudio.com/assets/og-image.png">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="assets/favicon-64.png" sizes="64x64" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700&family=Nunito+Sans:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body class="theme-leanto">
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="calm">
+  <header class="site-head">
+    <div class="wrap">
+      <a class="brand" href="index.html" aria-label="Forge App Studio home"><picture><source srcset="assets/logo-horizontal-on-dark.png" media="(prefers-color-scheme: dark)"><img src="assets/logo-horizontal.png" alt="Forge App Studio" width="193" height="64"></picture></a>
+      <nav class="nav" aria-label="Main">
+        <a class="nav-link" href="index.html#apps">Apps</a>
+        <a class="nav-link" href="index.html#about">About</a>
+        <a class="btn btn-primary" href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <section class="page-head" aria-labelledby="page-title">
+    <div class="wrap">
+      <p class="crumbs"><a href="index.html">Forge App Studio</a> / Leanto</p>
+      <span class="eyebrow">In development for iPhone</span>
+      <h1 id="page-title">Leanto: <em style="font-style:normal;color:var(--steel)">something to lean on.</em></h1>
+      <p class="lede">A calm iPhone app for autistic teens and adults, designed with autistic people from the first sketch. It is early in development, and we're looking for people to help shape it.</p>
+    </div>
+  </section>
+</div>
+
+<main id="main">
+
+  <section class="section" aria-labelledby="wl-title">
+    <div class="wrap split">
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <span class="eyebrow">Waitlist</span>
+        <h2 id="wl-title">Be one of the first to try Leanto</h2>
+        <p class="prose-width" style="color:var(--muted)">Join to hear when early versions are ready. If you'd like, you can also help shape Leanto by sharing your experience or testing early builds. Testers are thanked with free lifetime access.</p>
+        <ul class="facts" style="margin-top:8px">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5 9.5 17 19 7.5"/></svg><span><strong>You're in charge.</strong> Your routines, your goals, your data. A parent or helper only sees what you choose to share.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5 9.5 17 19 7.5"/></svg><span><strong>No streaks, no shame.</strong> No red overdue badges or guilt.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5 9.5 17 19 7.5"/></svg><span><strong>Private by default.</strong> Your information stays on your phone.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5 9.5 17 19 7.5"/></svg><span><strong>Built with autistic people.</strong> Autistic testers and advisors shape every feature and are paid for their time.</span></li>
+        </ul>
+      </div>
+      <form class="form" id="waitlist-form" novalidate>
+        <div class="field">
+          <label for="email">Email address</label>
+          <input id="email" name="email" type="email" autocomplete="email" required placeholder="you@example.com">
+        </div>
+        <fieldset>
+          <legend>I'm signing up as <span class="hint">(choose one)</span></legend>
+          <div class="options">
+            <label class="option"><input type="radio" name="role" id="role-self" value="autistic-person"><span>An autistic teen or adult</span></label>
+            <label class="option"><input type="radio" name="role" id="role-parent" value="parent-or-helper"><span>A parent or helper</span></label>
+            <label class="option"><input type="radio" name="role" id="role-pro" value="professional"><span>A professional</span></label>
+            <label class="option"><input type="radio" name="role" id="role-other" value="other"><span>Other</span></label>
+          </div>
+        </fieldset>
+        <label class="check" for="help"><input id="help" name="help" type="checkbox" value="yes"><span>I'd be open to a short conversation or testing early versions.</span></label>
+        <button class="btn btn-ink" type="submit">Join the waitlist</button>
+        <div id="form-status" class="status-msg" role="status" aria-live="polite" hidden></div>
+        <p class="note">We'll only use your email to tell you about Leanto. We never share or sell it, and you can leave the list at any time.</p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="dark site-foot">
+  <div class="wrap">
+    <div><img src="assets/logo-horizontal-on-dark.png" alt="Forge App Studio" width="169" height="56"></div>
+    <div>
+      <h4>Apps</h4>
+      <ul><li><a href="did-i-take-it.html">Did I Take It?</a></li><li><a href="leanto.html">Leanto</a></li></ul>
+    </div>
+    <div>
+      <h4>Did I Take It?</h4>
+      <ul><li><a href="did-i-take-it-support.html">Support</a></li><li><a href="did-i-take-it-privacy.html">Privacy Policy</a></li><li><a href="did-i-take-it-terms.html">Terms of Service</a></li></ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul><li><a href="mailto:support@forgeappstudio.com">support@forgeappstudio.com</a></li><li><a href="mailto:don@forgeappstudio.com">don@forgeappstudio.com</a></li></ul>
+    </div>
+    <div class="legal">
+      <span>&copy; 2026 ForgeApp Studio LLC. Forge App Studio is a trade name of ForgeApp Studio LLC.</span>
+      <span>Apple, iPhone and App Store are trademarks of Apple Inc.</span>
+    </div>
+  </div>
+</footer>
+<script src="assets/site.js"></script>
+</body>
+</html>
