@@ -25,9 +25,9 @@
     });
   });
 
-  // Waitlist form. Set FORM_ENDPOINT to your form service's address (for example a Formspree form URL).
+  // Waitlist form. Sign-ups go to the "Leanto waitlist" Google Sheet through a Google Apps Script web app.
   // Left empty, the form runs in preview mode and sends nothing.
-  var FORM_ENDPOINT = "";
+  var FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbyOdpljZwZ7y_woU5LXW2CiEN7sjgnaN9Blbtzc6YbOfJQocnncAAv0P1kmJ6mDMZor/exec";
   var form = document.getElementById("waitlist-form");
   if (!form) return;
   var status = document.getElementById("form-status");
@@ -48,12 +48,18 @@
       show("Thanks! This is a preview of the site, so nothing was sent. Once the site is live, this form will add you to the waitlist.");
       return;
     }
+    var button = form.querySelector('button[type="submit"]');
+    button.disabled = true;
     show("Sending...");
-    fetch(FORM_ENDPOINT, { method: "POST", body: new FormData(form), headers: { "Accept": "application/json" } })
-      .then(function (res) {
-        if (res.ok) { form.reset(); show("You're on the list. Thank you! We'll email you when there's something to try."); }
+    // Sent as plain form data so the browser doesn't need an extra permission check with Google first.
+    fetch(FORM_ENDPOINT, { method: "POST", body: new URLSearchParams(new FormData(form)) })
+      .then(function (res) { return res.json(); })
+      .then(function (data) {
+        if (data && data.ok) { form.reset(); show("You're on the list. Thank you! We'll email you when there's something to try."); }
+        else if (data && data.error === "invalid_email") { show("Please check your email address and try again."); }
         else { show("That didn't go through. Please try again in a minute, or email don@forgeappstudio.com."); }
       })
-      .catch(function () { show("That didn't go through. Check your connection and try again."); });
+      .catch(function () { show("That didn't go through. Check your connection and try again, or email don@forgeappstudio.com."); })
+      .then(function () { button.disabled = false; });
   });
 })();
