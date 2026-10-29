@@ -222,7 +222,7 @@ a.shelf-item:hover { background: rgba(238, 241, 243, 0.1); }
 .copy-btn:hover { color: var(--ink); border-color: var(--muted); }
 
 /* ---------- footer ---------- */
-.site-foot .wrap { display: grid; grid-template-columns: minmax(0, 1.2fr) repeat(3, minmax(0, 1fr)); gap: 32px; padding-block: 56px 28px; }
+.site-foot .wrap { display: grid; grid-template-columns: minmax(0, 1fr) repeat(3, minmax(0, 0.8fr)) minmax(0, 1.4fr); gap: 32px; padding-block: 56px 28px; }
 .site-foot img { height: 56px; width: auto; }
 .site-foot h4 { margin: 0 0 10px; font: 700 0.78rem/1.2 var(--font-display); letter-spacing: 0.14em; text-transform: uppercase; color: var(--on-dark-muted); }
 .site-foot ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
