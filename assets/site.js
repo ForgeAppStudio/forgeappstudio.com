@@ -52,7 +52,12 @@
     button.disabled = true;
     show("Sending...");
     // Sent as plain form data so the browser doesn't need an extra permission check with Google first.
-    fetch(FORM_ENDPOINT, { method: "POST", body: new URLSearchParams(new FormData(form)) })
+    var body = new URLSearchParams(new FormData(form));
+    // The device choices go to the sheet as one "devices" value, such as "iphone, ipad".
+    var devices = body.getAll("device");
+    body.delete("device");
+    body.set("devices", devices.join(", "));
+    fetch(FORM_ENDPOINT, { method: "POST", body: body })
       .then(function (res) { return res.json(); })
       .then(function (data) {
         if (data && data.ok) { form.reset(); show("You're on the list. Thank you! We'll email you when there's something to try."); }
